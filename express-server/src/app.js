@@ -7,7 +7,7 @@ const { NODE_ENV } = require('./config')
 const app = express()
 const winston = require('winston');
 
-// const uuid = require('uuid/v4');
+
 const bookmarksRouter= require('./book/book-router')
 const logger = winston.createLogger({
     level: 'info',
@@ -24,17 +24,9 @@ const logger = winston.createLogger({
 }
 
 
-// const store = require('../store')
-
-
-
-
 app.use(bookRouter)
 
 
-
-
-  
 const morganOption = (NODE_ENV === 'production')
   ? 'tiny'
   : 'common';

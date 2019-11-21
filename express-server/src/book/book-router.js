@@ -7,10 +7,9 @@ bookmarksRouter
   .route('./bookmarks')
   .get((req, res) => {
       res.json(store.bookmarks)
-      //   .json(books);
+      
     });
   .post(bodyParser, (req, res) => {
-    // move implementation logic into here
     for (const field of ['title', 'url', 'rating']) {
         if (!req.body[field]) {
           logger.error(`${field} is required`)
